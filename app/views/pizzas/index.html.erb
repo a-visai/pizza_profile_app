@@ -1,0 +1,11 @@
+<h1>Poppin' Pizza's Pizza Profile </h1>
+
+<h2><%=link_to 'Create a Pizza Profile!', new_pizza_path%></h2>
+
+<body>
+  <ul>
+    <% @pizza.each do |pizza| %>
+      <li><%=link_to pizza.name, pizza_path(pizza) %></li>
+    <% end %>
+  </ul>
+</body>

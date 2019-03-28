@@ -1,0 +1,35 @@
+<h1>Toppings</h1>
+
+<body>
+<%=form_for @topping do |f|%>
+
+  <%=f.hidden_field :pizza_id%></br>
+
+  <%= f.label ("What kind of protein?") %>
+  <%= f.text_field :protein %></br>
+
+  <%= f.label ("What kind of cheese?") %>
+  <%= f.text_field :cheese %></br>
+
+  <%= f.label ("What kind of sauce?") %>
+  <%= f.text_field :sauce %></br>
+
+  <%= f.label ("Any extras?") %>
+  <%= f.text_field :extras %></br>
+
+  <%=f.submit%>
+<%end%>
+
+<ul>
+  <%if @errors%>
+    <%@errors.each do |msg|%>
+      <li><%=msg%></li>
+    <%end%>
+  <%end%>
+</ul>
+
+</br>
+<h3><%=link_to 'Home', pizzas_path()%></h3>
+</br>
+
+</body>

@@ -1,0 +1,25 @@
+<h1>Your Profile</h1>
+
+<body>
+
+  <h2>Name</h2>
+  <%= @pizza.name %> </br>
+  <h2>Style</h2>
+  <%= @pizza.style %> </br>
+  <h2>Toppings</h2>
+  <% @pizza.toppings.each do |pizza|%>
+  <%=pizza.protein%> <%=pizza.cheese%> <%=pizza.sauce%> <%=pizza.extras%>
+  <% end %>
+
+</body>
+
+<h3><%=link_to 'Add Some Toppings', new_topping_path(pizza_id: @pizza.id)%></h3>
+<h3><%=link_to 'Edit Your Profile', edit_pizza_path()%></h3>
+<h3><%=link_to 'Delete Your Profile', pizza_path(), :method => :delete%></h3>
+<%@pizza.toppings.each do |topping|%>
+  <h3><%=link_to 'Edit Your Toppings', edit_topping_path(topping)%></h3>
+  <h3><%=link_to 'Delete Your Toppings', topping_path(topping), :method => :delete%></h3>
+<%end%>
+</br>
+<h3><%=link_to 'Home', pizzas_path()%></h3>
+</br>

@@ -1,0 +1,22 @@
+<h1>Tell me about your Pizza!</h1>
+
+<body>
+<%=form_for @pizza do |f|%>
+  <%= f.label ("What's it's name?") %>
+  <%= f.text_field :name %></br>
+
+  <%= f.label ("What style is it?") %>
+  <%= f.text_field :style %></br>
+
+  <%=f.submit%>
+<%end%>
+
+<ul>
+  <%if @errors%>
+    <%@errors.each do |msg|%>
+      <li><%=msg%></li>
+    <%end%>
+  <%end%>
+</ul>
+
+</body>
